@@ -39,5 +39,5 @@ if ($result->num_rows > 0) {
 }
 
 
-//header('Location: index.php'); //RITORNO LINK
+header('Location: index.php'); //RITORNO LINK
 ?>

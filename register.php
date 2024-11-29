@@ -35,5 +35,5 @@ if ($connessione->query($sql) == true) {
     echo 'Errore di registrazione: '.$connessione->error;
 }
 
-//header('Location: index.php'); //RITORNO LINK
+header('Location: index.php'); //RITORNO LINK
 ?>
