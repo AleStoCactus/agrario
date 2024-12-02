@@ -9,11 +9,24 @@ body {
 label {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+button {
+    color: #ffffff;
+    background-color: #00d64b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 0px solid;
+    padding: 16px 69px;
+    font-weight: 690;
+    box-shadow: 0px 0px 8px rgb(0, 255, 136);
+    font-size: 28px;
+    margin-top: 12px;
+}
 
 .topnav {
     margin: 0%;
     background-color: #dfdfdf;
     overflow: hidden;
+    box-shadow: 0px 2px 8px rgb(99, 99, 99);
 }
 .topnav a {
     float: left;
@@ -48,4 +61,5 @@ label {
     text-align: center;
     font-family: 'Consolas';
     font-size: 24px;
+    box-shadow: 0px 4px 8px rgb(80, 80, 80);
 }
