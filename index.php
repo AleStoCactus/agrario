@@ -38,6 +38,8 @@ session_start();
         <a>Contattaci</a>
         <a>Chi siamo</a>
     </div> 
+
+    <br><br><br>
     <div class="login-form">
     <h2>Login</h2>
     <form action="includes/login.php" method="post">
