@@ -16,25 +16,33 @@ session_start();
 </head>
 <body>
     <?php
+    if ($_SESSION['login'] == true) {
         if (isset($_SESSION['status'])) {
             ?>
-            <div class="alert alert-success" role="alert">
-                <strong>Hey! </strong> <?php echo $_SESSION['status']; ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>  
+                <div class="alert alert-success" role="alert">
+                    <strong>Hey! </strong> <?php echo $_SESSION['status']; ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>  
             <?php
+        }
+        unset($_SESSION['status']);
+        } elseif ($_SESSION['login'] == false) {
+            if (isset($_SESSION['status'])) {
+                ?>
+                    <div class="alert alert-danger" role="alert">
+                    <strong>Hey! </strong> <?php echo $_SESSION['status']; ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div> 
+                <?php
+            }
             unset($_SESSION['status']);
         }
     ?>
-    <h2>Login</h2>
-    <form action="includes/login.php" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+
     <div class="topnav">
         <a>Home</a>
         <a>News</a>
@@ -43,7 +51,7 @@ session_start();
     </div> 
     <div class="login-form">
     <h2>Login</h2>
-    <form action="login.php" method="post">
+    <form action="includes/login.php" method="post">
         <input type="email" class="textbox" id="email" name="email" placeholder="E-mail" required>
         <br>
         <br>
@@ -54,7 +62,7 @@ session_start();
     </div>
     <div class="register-form">
     <h2>Register</h2>
-    <form action="register.php" method="post">
+    <form action="includes/register.php" method="post">
         <input type="text" class="textbox" id="nome" name="nome" placeholder="Nome" required>
         <br>
         <br>

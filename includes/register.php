@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //CONNESSIONE AL DATABASE
 $connessione = new mysqli('localhost', 'root', '', 'progettoagrario');
@@ -30,19 +31,13 @@ $sql = "INSERT INTO utenti (nome, email, password, tipo_utente) VALUES ('$nome',
 
 //CONTROLLO SE ESEGUITA QUERY
 if ($connessione->query($sql) == true) {
-    echo 'Registrazione avvenuta con successo';
-} else {
-    echo 'Errore di registrazione: '.$connessione->error;
-}
-
-//SE REGISTRAZIONE AVVENUTA CON SUCCESSO
-if ($connessione->query($sql) == true) {
-    session_start();
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
     $_SESSION['login'] = true;
-    echo 'Registrazione avvenuta con successo';
+    $_SESSION['status'] = 'Registrazione avvenuta con successo!';
 } else {
+    $_SESSION['login'] = false;
+    $_SESSION['status'] = 'Registrazione non valida!';
     echo 'Errore di registrazione: '.$connessione->error;
 }
 

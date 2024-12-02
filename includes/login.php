@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //CONNESSIONE AL DATABASE
 $connessione = new mysqli('localhost', 'root', '', 'progettoagrario');
@@ -33,19 +34,13 @@ $result = $connessione->query($sql);
 
 //CONTROLLO SE ESEGUITA QUERY
 if ($result->num_rows > 0) {
-    echo 'Login avvenuto con successo <br>';
-} else {
-    echo 'Errore di login: '.$connessione->error;
-}
-
-//SE LOGIN AVVENUTO CON SUCCESSO
-if ($result->num_rows > 0) {
-    session_start();
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
     $_SESSION['login'] = true;
-    $_SESSION['status'] = 'Login avvenuto con successo';
+    $_SESSION['status'] = 'Login avvenuto con successo!';
 } else {
+    $_SESSION['login'] = false;
+    $_SESSION['status'] = 'Email o passowrd errati!';
     echo 'Errore di login: '.$connessione->error;
 }
 
