@@ -42,7 +42,8 @@ session_start();
             unset($_SESSION['status']);
         }
     ?>
-
+    <link rel="stylesheet" href="style.css">
+<body>
     <div class="topnav">
         <a>Home</a>
         <a>News</a>
