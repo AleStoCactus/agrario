@@ -1,3 +1,51 @@
 h2 {
     font-family: 'Segoe UI';
+    font-weight: 727;
+    margin-bottom: 0%;
+}
+body {
+    text-align: center;
+}
+label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.topnav {
+    margin: 0%;
+    background-color: #dfdfdf;
+    overflow: hidden;
+}
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.topnav a:hover {
+    background-color: #00d64b;
+    color: black;
+}
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.login-form {
+    padding: 20px;
+}
+.register-form {
+    padding: 20px;
+}
+.textbox {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid gray;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Consolas';
+    font-size: 24px;
 }

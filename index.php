@@ -10,29 +10,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="topnav">
+        <a>Home</a>
+        <a>News</a>
+        <a>Contattaci</a>
+        <a>Chi siamo</a>
+    </div> 
+    <div class="login-form">
     <h2>Login</h2>
     <form action="login.php" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" class="textbox" id="email" name="email" placeholder="E-mail" required>
         <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="password" class="textbox" id="password" name="password" placeholder="Password" required>
         <br>
         <button type="submit">Login</button>
     </form>
-
+    </div>
+    <div class="register-form">
     <h2>Register</h2>
     <form action="register.php" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" class="textbox" id="nome" name="nome" placeholder="Nome" required>
         <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
         <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="email" class="textbox" id="email" name="email" placeholder="E-mail" required>
+        <br>
+        <br>
+        <input type="password" class="textbox" id="password" name="password" placeholder="Password" required>
         <br>
         <button type="submit">Register</button>
     </form>
+    </div>
 </body>
 </html>
