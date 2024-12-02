@@ -35,5 +35,16 @@ if ($connessione->query($sql) == true) {
     echo 'Errore di registrazione: '.$connessione->error;
 }
 
-header('Location: index.php'); //RITORNO LINK
+//SE REGISTRAZIONE AVVENUTA CON SUCCESSO
+if ($connessione->query($sql) == true) {
+    session_start();
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+    $_SESSION['login'] = true;
+    echo 'Registrazione avvenuta con successo';
+} else {
+    echo 'Errore di registrazione: '.$connessione->error;
+}
+
+header('Location: ../index.php'); //RITORNO LINK
 ?>

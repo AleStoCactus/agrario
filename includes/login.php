@@ -33,11 +33,22 @@ $result = $connessione->query($sql);
 
 //CONTROLLO SE ESEGUITA QUERY
 if ($result->num_rows > 0) {
-    echo 'Login avvenuto con successo';
+    echo 'Login avvenuto con successo <br>';
+} else {
+    echo 'Errore di login: '.$connessione->error;
+}
+
+//SE LOGIN AVVENUTO CON SUCCESSO
+if ($result->num_rows > 0) {
+    session_start();
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+    $_SESSION['login'] = true;
+    $_SESSION['status'] = 'Login avvenuto con successo';
 } else {
     echo 'Errore di login: '.$connessione->error;
 }
 
 
-header('Location: index.php'); //RITORNO LINK
+header('Location: ../index.php'); //RITORNO LINK
 ?>
