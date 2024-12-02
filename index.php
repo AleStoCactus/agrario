@@ -38,7 +38,7 @@ session_start();
     </div> 
     <div class="login-form">
     <h2>Login</h2>
-    <form action="login.php" method="post">
+    <form action="includes/login.php" method="post">
         <input type="email" class="textbox" id="email" name="email" placeholder="E-mail" required>
         <br>
         <br>
@@ -49,7 +49,7 @@ session_start();
     </div>
     <div class="register-form">
     <h2>Register</h2>
-    <form action="register.php" method="post">
+    <form action="includes/register.php" method="post">
         <input type="text" class="textbox" id="nome" name="nome" placeholder="Nome" required>
         <br>
         <br>
