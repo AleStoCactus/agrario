@@ -17,10 +17,14 @@ $password = $_POST['password'];
 
 
 $sql2 = "SELECT password FROM utenti WHERE email = '$email'";
+$sql3 = "SELECT nome FROM utenti WHERE email = '$email'";
 $result2 = $connessione->query($sql2);
+$result4 = $connessione->query($sql3);
 
 //CONVERTIRE ARRAY IN STRINGA
 $result3 = $result2->fetch_assoc()['password'];
+$nome = $result4->fetch_assoc()['nome'];
+echo $nome . '<br>';
 
 //VERIFICA PASSWORD SE E' UGUALE A QUELLA INSERITA
 $hash = password_verify($password, $result3);
@@ -34,16 +38,16 @@ $result = $connessione->query($sql);
 
 //CONTROLLO SE ESEGUITA QUERY
 if ($result->num_rows > 0) {
+    $_SESSION['nome'] = $nome;
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
     $_SESSION['login'] = true;
     $_SESSION['status'] = 'Login avvenuto con successo!';
+    header('Location: ../dashboard.php');
 } else {
     $_SESSION['login'] = false;
     $_SESSION['status'] = 'Email o passowrd errati!';
     echo 'Errore di login: '.$connessione->error;
+    header('Location: ../index.php');
 }
-
-
-header('Location: ../index.php'); //RITORNO LINK
 ?>

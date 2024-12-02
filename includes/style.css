@@ -23,6 +23,22 @@ label {
     text-decoration: none;
     font-size: 17px;
 }
+#logout {
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+#logoutB {
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration: none;
+    font-size: 17px;
+}
 .topnav a:hover {
     background-color: #00d64b;
     color: black;

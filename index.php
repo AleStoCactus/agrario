@@ -16,19 +16,7 @@ session_start();
 </head>
 <body>
     <?php
-    if ($_SESSION['login'] == true) {
-        if (isset($_SESSION['status'])) {
-            ?>
-                <div class="alert alert-success" role="alert">
-                    <strong>Hey! </strong> <?php echo $_SESSION['status']; ?>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>  
-            <?php
-        }
-        unset($_SESSION['status']);
-        } elseif ($_SESSION['login'] == false) {
+        if ($_SESSION['login'] == false) {
             if (isset($_SESSION['status'])) {
                 ?>
                     <div class="alert alert-danger" role="alert">
@@ -39,8 +27,8 @@ session_start();
                     </div> 
                 <?php
             }
-            unset($_SESSION['status']);
         }
+        unset($_SESSION['status']);
     ?>
     <link rel="stylesheet" href="style.css">
 <body>

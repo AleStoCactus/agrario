@@ -31,15 +31,18 @@ $sql = "INSERT INTO utenti (nome, email, password, tipo_utente) VALUES ('$nome',
 
 //CONTROLLO SE ESEGUITA QUERY
 if ($connessione->query($sql) == true) {
+    $_SESSION['nome'] = $nome;
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
     $_SESSION['login'] = true;
     $_SESSION['status'] = 'Registrazione avvenuta con successo!';
+    header('Location: ../dashboard.php');
 } else {
     $_SESSION['login'] = false;
     $_SESSION['status'] = 'Registrazione non valida!';
     echo 'Errore di registrazione: '.$connessione->error;
+    header('Location: ../index.php');
 }
 
-header('Location: ../index.php'); //RITORNO LINK
+
 ?>
