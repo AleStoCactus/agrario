@@ -28,12 +28,7 @@ session_start();
             unset($_SESSION['status']);
         }
     ?>
-    <h2>Login</h2>
-    <form action="includes/login.php" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
     <link rel="stylesheet" href="style.css">
-</head>
 <body>
     <div class="topnav">
         <a>Home</a>
