@@ -3,7 +3,9 @@ session_start();
 if ($_SESSION['login'] == false) {
     $_SESSION['status'] = 'Effettua il login per accedere alla dashboard!';
     header('Location: index.php');
+    die();
 }
+$_SESSION['where'] = 'dashboard.php';
 ?>
 
 <!DOCTYPE html>
@@ -32,16 +34,17 @@ if ($_SESSION['login'] == false) {
                     </div>  
                 <?php
             }
-        }
+        } 
         unset($_SESSION['status']);
     ?>
 
 <body>
     <div class="topnav">
-        <a>Home</a>
+        <a href="dashboard.php">Home</a>
         <a>News</a>
         <a>Contattaci</a>
         <a>Chi siamo</a>
+        <a href="dashboardutenti.php">Dashboard Utenti</a>
         
         <a id="logout"><?php echo $_SESSION['nome']; ?></a>
         <button onclick="window.location='includes/logout.php';" value="Logout" id="logoutB"><a>Logout</a></button>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['where'] = 'index.php';
 ?>
 
 <!DOCTYPE html>
@@ -33,10 +34,11 @@ session_start();
     <link rel="stylesheet" href="style.css">
 <body>
     <div class="topnav">
-        <a>Home</a>
+        <a href="dashboard.php">Home</a>
         <a>News</a>
         <a>Contattaci</a>
         <a>Chi siamo</a>
+        <a href="dashboardutenti.php">Dashboard Utenti</a>
     </div> 
 
     <br><br><br>

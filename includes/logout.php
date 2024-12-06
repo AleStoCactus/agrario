@@ -7,10 +7,9 @@ $_SESSION['login'] = false;
 $_SESSION['nome'] = 'guest';
 $_SESSION['email'] = 'guest';
 $_SESSION['password'] = 'guest';
+$_SESSION['status'] = 'Logout avvenuto con successo!';
 
 echo $_SESSION['nome'] . '<br>';
-
-session_abort();
 
 header('Location: ../index.php');
 ?>
