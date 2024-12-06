@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['login'] == false) {
-    $_SESSION['status'] = 'Effettua il login per accedere alla dashboard!';
+    $_SESSION['status'] = 'Effettua il login per accedere alla <i>home</i>!';
     header('Location: index.php');
     die();
 }
