@@ -15,7 +15,7 @@ if ($connessione->connect_error) {
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-
+sleep(1);
 $sql2 = "SELECT password FROM utenti WHERE email = '$email'";
 $sql3 = "SELECT nome FROM utenti WHERE email = '$email'";
 $sql4 = "SELECT tipo_utente FROM utenti WHERE email = '$email'";

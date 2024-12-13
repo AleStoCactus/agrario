@@ -3,32 +3,44 @@ h2 {
     font-weight: 727;
     margin-bottom: 0%;
 }
-body {
+.loginbuttona {
     text-align: center;
+}
+body {
+    background-color: #EDF1D6;
 }
 label {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-button {
-    color: #ffffff;
-    background-color: #00d64b;
-    border-radius: 20px;
-    box-sizing: border-box;
-    border: 0px solid;
-    padding: 15px 55px;
-    font-weight: 690;
-    box-shadow: 0px 0px 8px rgb(0, 255, 136);
-    font-size: 28px;
-    margin-top: 12px;
+
+#ruby {
+    position: fixed;
+    bottom: 1;
+    right: 0;
+    z-index: 1000;
+}
+
+.register-form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 330px;
+    padding: 20px;
+    background-color: #9DC08B;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px #40513B;
+}
+
+#registrati {
+    background-color: #609966;
+    border-color: #609966;
 }
 
 .topnav {
     margin: 0%;
-    background-color: #dfdfdf;
+    background-color: #EDF1D6;
     overflow: hidden;
-    box-shadow: 0px 2px 8px rgb(99, 99, 99);
+    box-shadow: 0px 2px 8px #636363;
 }
-
 .topnav button:hover {
     cursor: pointer;
 }
@@ -39,6 +51,7 @@ button {
     background-color: #dfdfdf;
     overflow: hidden;
     box-shadow: 0px 2px 8px rgb(99, 99, 99);
+
 }
 #logoutB {
     float: right;
@@ -54,16 +67,21 @@ button {
     color: black;
     text-align: center;
     padding: 14px 16px;
+    margin: 0px 5px 0px 0px; 
     text-decoration: none;
     font-size: 17px;
+    border-radius: 10px;
 }
 #button2:hover {
-    background-color: #00d64b;
+    background-color: #609966;
+}
+.topnav a {
+    background-color: #9DC08B;
     color: black;
     cursor: pointer;
 }
 .topnav a:hover {
-    background-color: #00d64b;
+    background-color: #609966;
     color: black;
     cursor: pointer;
 }
@@ -73,24 +91,27 @@ button {
     cursor: pointer;
 }
 
-.login-form {
-    padding: 20px;
-}
-.register-form {
-    padding: 20px;
-}
 .textbox {
-    width: 25%;
-    padding: 12px 20px;
-    margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid gray;
     border-radius: 10px;
     text-align: center;
     font-family: 'Consolas';
     font-size: 24px;
-    box-shadow: 0px 4px 8px rgb(80, 80, 80);
+    
 }
+.textbox2 {
+    box-sizing: border-box;
+    border: 0px solid gray;
+    text-align: center;
+    font-family: 'Consolas';
+    font-size: 24px;
+    box-shadow: 0px 4px 8px rgb(80, 80, 80);
+    border-radius: 1rem;
+}
+.shadow {
+    box-shadow: inset rgba(60, 70, 85, 0.5) 0px 0px 40px 0px, inset rgba(60, 70, 85, 0.5) 0px 0px 40px 0px, inset rgba(0, 0, 0, 1) 0px 0px 36px -24px;
+  }
 
 .collapsible {
     background-color: #eee;
@@ -114,4 +135,9 @@ button {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+  }
+
+  #loginbutton {
+    background-color: #609966;
+    border-color: #609966;
   }
