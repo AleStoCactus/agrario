@@ -1,7 +1,6 @@
 <?php
 session_start();
 $_SESSION['where'] = 'index.php';
-$_SESSION['login'] = NULL;
 ?>
 
 <?php include 'includes/header.php';?> 
@@ -21,10 +20,21 @@ $_SESSION['login'] = NULL;
                     </div> 
                 <?php
             }
-        }
+        } else if ($_SESSION['login'] == true) {
+            if (isset($_SESSION['status'])) {
+                ?>
+                    <div class="alert alert-success" role="alert">
+                    <strong>Hey! </strong> <?php echo $_SESSION['status']; ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>  
+                <?php
+            }
+        } 
         unset($_SESSION['status']);
     ?>
-<body>
+
      <?php include 'includes/link.php';?>
 
     <br><br><br>

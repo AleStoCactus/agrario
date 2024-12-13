@@ -49,7 +49,7 @@ if ($hash == 1) {
         $_SESSION['tipo_utente'] = $tipo_utente;
         $_SESSION['login'] = true;
         $_SESSION['status'] = 'Login avvenuto con successo!';
-        header('Location: ../dashboard.php');
+        header('Location: ../index.php');
     } else {
         $_SESSION['login'] = false;
         $_SESSION['status'] = 'Email o password errati!';
