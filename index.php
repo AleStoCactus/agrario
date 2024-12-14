@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['where'] = 'index.php';
+$_SESSION['login'];
 ?>
 
 <?php include 'includes/header.php';?> 
@@ -42,6 +43,9 @@ $_SESSION['where'] = 'index.php';
     if ($_SESSION['login'] == false) {
         include 'includes/test.php';
         }
+    if ($_SESSION['login'] == true) {
+        include 'includes/shop.php';
+    }
     ?>
 </body>
 </html>

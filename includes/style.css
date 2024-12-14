@@ -16,9 +16,19 @@ label {
 
 #ruby {
     position: fixed;
+    height: 100%;
     bottom: 1;
     right: 0;
-    z-index: 1000;
+    z-index: -1;
+}
+#pepper {
+    position: fixed;
+    height: 55%;
+    bottom: 0;
+    left: 1;
+    right: 0;
+    top: 1;
+    z-index: -1;
 }
 
 .register-form {
@@ -140,4 +150,29 @@ label {
   #loginbutton {
     background-color: #609966;
     border-color: #609966;
+  }
+
+  .Utenti {
+    background-color: #9DC08B;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px #40513B;
+    padding: 20px;
+    width: 100%;
+    max-width: 330px;
+    display: inline-table;
+    margin-right:10px;
+  }
+
+  #conferma {
+    float: right;
+  }
+
+  #offcanvasRight {
+    background-color: #EDF1D6;
+    border-radius: 10px;
+  }
+
+  .offcanvas-header {
+    background-color: #609966;
+    box-shadow: 0px 2px 4px #40513B;
   }
