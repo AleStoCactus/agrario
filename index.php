@@ -1,7 +1,6 @@
 <?php
 session_start();
 $_SESSION['where'] = 'index.php';
-$_SESSION['login'];
 ?>
 
 <?php include 'includes/header.php';?> 
@@ -47,5 +46,8 @@ $_SESSION['login'];
         include 'includes/shop.php';
     }
     ?>
+    <div class="placeholderAgrario">
+    <?php include 'includes/placeholder.php';?>
+    </div>
 </body>
 </html>
