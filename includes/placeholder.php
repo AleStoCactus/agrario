@@ -8,7 +8,7 @@ if ($connessione->connect_error) {
 }
 
 //ciclo per verificare se l'id del prodotto esiste nel database
-for($i = 1; $i <= 1000; $i++) {
+for($i = 1; $i <= 25; $i++) {
     $sql = "SELECT * FROM prodotti WHERE ID_prodotto = $i";
     $result = $connessione->query($sql);
     $row = $result->fetch_assoc();
@@ -22,14 +22,26 @@ for($i = 1; $i <= 1000; $i++) {
             <div class="card-body">
                 <h5 class="card-title">
                     <?php echo $row['nome']; ?>
-
                 </h5>
                 <p class="card-text">
                     <?php echo $row['descrizione']; ?>
                 </p>
-                <a href="#" class="btn btn-primary" value="<?php $row['ID_prodotto']; ?>" onclick="aggiungiCarrello(this)">
-                    <?php echo $row['prezzo']; ?>€
-                </a>
+                <?php
+                if ($_SESSION['login'] == true) {
+                    ?>
+                    <form action="includes/aggiungeordine.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo $row['ID_prodotto'] ?>"/>
+                        <button class="btn btn-primary" id="aggiungi" type="submit">
+                            <?php echo $row['prezzo']; ?>€
+                        </button>
+                    </form>
+                    <?php
+                } else if ($_SESSION['login'] == false) {
+                    ?>
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+                    <?php
+                }
+                ?>
             </div>
         </div>
         <?php
