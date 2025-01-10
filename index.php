@@ -1,6 +1,11 @@
 <?php
 session_start();
 $_SESSION['where'] = 'index.php';
+if ($_SESSION['login'] == false) {
+    $_SESSION['login'] = false;
+} else if ($_SESSION['login'] == true) {
+    $_SESSION['login'] = true;
+}
 ?>
 
 <?php include 'includes/header.php';?> 
