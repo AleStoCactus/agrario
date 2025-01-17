@@ -54,7 +54,7 @@ if ($connessione->query($sql3) == true) {
 
 //QUERY DI PRENDERE ID ORDINE
 
-$sql4 = "SELECT * FROM ordini WHERE utente_ID = $ID_utente AND statoordine = 'carrello'";
+$sql4 = "SELECT * FROM ordini WHERE utente_ID = $ID_utente AND statoordine = 'carrello' AND dataordine = '$data'";
 $result4 = $connessione->query($sql4);
 $row4 = $result4->fetch_assoc();
 

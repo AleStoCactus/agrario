@@ -8,6 +8,7 @@ $_SESSION['nome'] = 'guest';
 $_SESSION['email'] = 'guest';
 $_SESSION['password'] = 'guest';
 $_SESSION['status'] = 'Logout avvenuto con successo!';
+$_SESSION['itemcarrello'] = false;
 
 echo $_SESSION['nome'] . '<br>';
 
