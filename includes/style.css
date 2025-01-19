@@ -17,7 +17,7 @@ label {
 #ruby {
     position: fixed;
     height: 100%;
-    bottom: 1;
+    bottom: -45%;
     right: 0;
     z-index: -1;
 }
@@ -111,6 +111,7 @@ label {
     
 }
 .textbox2 {
+  
     box-sizing: border-box;
     border: 0px solid gray;
     text-align: center;

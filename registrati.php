@@ -6,6 +6,7 @@ $_SESSION['where'] = 'registrati.php';
 <?php include 'includes/header.php';?> 
     <title>Registrati</title>
     <link rel="stylesheet" href="includes/style.css">
+    <link rel="stylesheet" href="includes/style2.css">
     <style>
         body {
             background-repeat: no-repeat;
@@ -13,6 +14,7 @@ $_SESSION['where'] = 'registrati.php';
             background-image: linear-gradient(45deg, #609966, #9DC08B);
         }
     </style>
+    
 </head>
 <body>
     <div class="topnav">
@@ -32,9 +34,14 @@ $_SESSION['where'] = 'registrati.php';
         <br>
         <input type="password" class="textbox2 shadow" id="password" name="password" placeholder="Password" required>
         <br><br><br>
-        <button class="btn btn-secondary" id="registrati" type="submit">Register</button>
+        <button class="text" id="registrati2" type="submit">
+            <span>
+                Register
+            </span>
+        </button>
     </form>
     </div>
+
     <img src="resources/ruby.webp" id="ruby">
 </body>
 </html>
