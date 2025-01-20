@@ -8,7 +8,7 @@ if ($connessione->connect_error) {
 }
 
 $email = $_SESSION['email'];
-echo $email;
+//echo $email . '<br>';
 
 
 //ciclo per verificare se l'id del prodotto esiste nel database
@@ -18,7 +18,7 @@ for($i = 1; $i <= 100; $i++) {
     $row69 = $result69->fetch_assoc();
     
     $ID_utente = $row69['ID_utente'];
-    echo $ID_utente;
+    //echo 'utente: ' . $ID_utente . '<br>';
 
     if ($row69 == NULL) {
     } else {
@@ -29,14 +29,19 @@ for($i = 1; $i <= 100; $i++) {
         if ($row == NULL) {
         } else {
             $ID_ordine = $row['ID_ordine'];
+            $statoordine = $row['statoordine'];
 
-            $sql2 = "SELECT * FROM dettagli_ordini WHERE prodotto_ID = $ID_ordine";
+            //echo 'ID ORDINE: ' . $ID_ordine . '<br>';
+
+            $sql2 = "SELECT * FROM dettagli_ordini WHERE ordine_ID = $ID_ordine";
             $result2 = $connessione->query($sql2);
             $row2 = $result2->fetch_assoc();
         
-        if ($row2 == NULL) {
+        if ($row2 == NULL || $statoordine == "cancellato") {
         } else {
             $prodotto_ID = $row2['prodotto_ID'];
+
+            //echo '<b>ID PRODOTTO:</b> ' . $prodotto_ID  . '<br>';
 
             $sql3 = "SELECT * FROM prodotti WHERE ID_prodotto = $prodotto_ID";
             $result3 = $connessione->query($sql3);
@@ -54,6 +59,10 @@ for($i = 1; $i <= 100; $i++) {
                         <p class="card-text">
                             <?php echo $row3['descrizione']; ?>
                         </p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="includes/acquista.php?ID_prodotto=<?php echo $ID_ordine; ?>" class="btn btn-info">Acquista</a>
+                        <a href="includes/rimuovi.php?ID_prodotto=<?php echo $ID_ordine; ?>" class="btn btn-danger">Rimuovi</a>
                     </div>
                 </div>
                 <?php
